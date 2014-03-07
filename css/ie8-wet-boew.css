@@ -3,7 +3,7 @@
 /*!
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
- * v4.0.0-rc1-development - 2014-03-06
+ * v4.0.0-rc1-development - 2014-03-07
  *
  */
 
@@ -7297,7 +7297,7 @@ a.btn {
   text-decoration: none;
 }
 
-main :not(.dropdown):not(.btn-group):not(.nav):not(.navbar):not(.badge) a:not(.btn):visited {
+main :not(.dropdown):not(.btn-group):not(.nav):not(.navbar):not(.badge) a:not(.btn):not([role=tab]):visited {
   color: #7834bc;
 }
 
@@ -10776,8 +10776,7 @@ table.dataTable tr.even td.sorting_3 {
   cursor: pointer;
   margin: 0 10px 0 0;
   color: black;
-  background: #eeeeee;
-  background: rgba(238, 238, 238, 0.9);
+  background: #ebf2fc;
   border: 1px solid #cccccc;
   text-align: center;
   position: relative;
@@ -10795,10 +10794,13 @@ table.dataTable tr.even td.sorting_3 {
   border-bottom: 0;
   background: white;
   cursor: default;
+  font-weight: 700;
 }
 
 .wb-tabs [role="tablist"] li.active a {
   cursor: default;
+  border-top: 4px solid #666666;
+  padding-top: 6px;
 }
 
 .wb-tabs [role="tabpanel"] {
@@ -10807,6 +10809,14 @@ table.dataTable tr.even td.sorting_3 {
 
 .wb-tabs [role="tabpanel"].out {
   display: none;
+}
+
+.wb-tabs.carousel-s1 [role="tablist"] li.active a,
+.wb-tabs.carousel-s1 [role="tablist"] li:focus a,
+.wb-tabs.carousel-s1 [role="tablist"] li:hover a,
+.wb-tabs.carousel-s2 [role="tablist"] li[role="presentation"].active a {
+  border-top: none;
+  padding-top: 10px;
 }
 
 .wb-tabs.carousel-s1 [role="tablist"] {
@@ -11345,6 +11355,41 @@ table.dataTable tr.even td.sorting_3 {
 }
 
 /*
+ * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+ * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
+ */
+
+.wb-group-summary {
+  background-color: #f0f2f4;
+}
+
+.wb-zebra-col-hover col.table-hover {
+  background-color: #f0f0f0;
+}
+
+.wb-zebra-col-hover .wb-group-summary col.table-hover,
+.table-hover .wb-group-summary tr:hover td,
+.table-hover .wb-group-summary tr:hover th {
+  background-color: #fafaff;
+}
+
+.wb-cell-layout {
+  background-color: transparent;
+}
+
+.wb-cell-key {
+  font-style: italic;
+}
+
+.wb-cell-desc {
+  font-style: italic;
+}
+
+.wb-zebra > colgroup + colgroup {
+  border-left: 2px solid #dddddd;
+}
+
+/*
  Polyfills
  */
 
@@ -11361,6 +11406,25 @@ datalist {
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
  */
+
+summary:hover,
+summary:focus,
+details[open] summary {
+  background: #d4d4d4;
+  font-weight: 700;
+}
+
+summary {
+  color: #284162;
+  background: #ebebeb;
+  cursor: pointer;
+  /* Apply a pointer cursor upon hover to indicate it’s a clickable element. These styles can be applied regardless of whether the fallback is needed */
+}
+
+summary:hover,
+summary:focus {
+  /* Add focus styles (for keyboard accessibility) */
+}
 
 details:not([open])> * {
   display: none;
