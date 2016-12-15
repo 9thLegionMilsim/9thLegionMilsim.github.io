@@ -5680,11 +5680,21 @@ fieldset {
   border-top: 1px solid #e5e5e5;
   padding-top: 10px;
   /*
+	 *  Allows fieldSet/legend to have a bottom border under legend title
+	 *	https://github.com/wet-boew/wet-boew/issues/7766
+	 */
+  /*
 	 *	Fieldset/legend as a label for a group of checkboxes or radio buttons
 	 *	https://github.com/wet-boew/wet-boew/issues/5797
 	 */ }
   fieldset:first-child {
     border-top: 0; }
+  fieldset.legend-brdr-bttm {
+    border-top: 0; }
+    fieldset.legend-brdr-bttm legend {
+      border-bottom: 1px solid #e5e5e5;
+      float: none;
+      margin-bottom: 10px; }
   fieldset.chkbxrdio-grp {
     border-top: 0;
     padding-top: 0; }
@@ -9599,6 +9609,11 @@ main {
   padding-top: 1em; }
   main h1 {
     margin-top: 0; }
+
+img.member {
+  float: left;
+  margin-right: 10px;
+  max-height: 300px; }
 
 #wb-info2 {
   border-top: 10px solid #222; }
