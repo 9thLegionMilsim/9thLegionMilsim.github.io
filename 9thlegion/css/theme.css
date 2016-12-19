@@ -9610,11 +9610,6 @@ main {
   main h1 {
     margin-top: 0; }
 
-img.member {
-  float: left;
-  margin-right: 10px;
-  max-height: 300px; }
-
 #wb-info2 {
   border-top: 10px solid #222; }
   #wb-info2 section {
@@ -9678,7 +9673,9 @@ img.member {
   #wb-sttl {
     padding-right: 4em; }
     #wb-sttl a span {
-      font-size: 150%; } }
+      font-size: 150%; }
+  img.member {
+    max-height: 300px; } }
 
 /* Medium view and under */
 @media screen and (max-width: 1199px) {
